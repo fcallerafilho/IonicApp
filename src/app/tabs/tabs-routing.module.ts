@@ -17,7 +17,7 @@ const routes: Routes = [
         loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
-        path: 'Feed',
+        path: 'feed',
         loadChildren: () => import('../feed/feed.module').then(m => m.FeedPageModule)
       },
       {

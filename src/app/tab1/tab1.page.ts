@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +10,33 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(private menu: MenuController, private navController: NavController) { }
+
+  openFirst() {
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+  }
+
+  openEnd() {
+    this.menu.open('end');
+  }
+
+  openCustom() {
+    this.menu.enable(true, 'custom');
+    this.menu.open('custom');
+  }
+
+  goToConfiguracoesPage(){
+    this.navController.navigateForward('configuracoes')
+  }
+
+  goToPerfilPage(){
+    this.navController.navigateForward('perfil')
+  }
+
+  goToSobrePage(){
+    this.navController.navigateForward('sobre')
+  }
 
 }
+
