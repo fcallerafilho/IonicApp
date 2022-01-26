@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
 import { MoovieService } from '../moovie.service';
+import { Component, ViewChild } from '@angular/core';
+import { IonInfiniteScroll } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-feed',
@@ -23,6 +25,7 @@ export class FeedPage {
   }
 
   public lista_filmes = new Array<any>();
+  public page = 1;
 
   constructor(private moovieService: MoovieService, private menu: MenuController, private navController: NavController) { 
     this.ionViewDidLoad()
@@ -68,4 +71,38 @@ export class FeedPage {
   goToSobrePage(){
     this.navController.navigateForward('sobre')
   }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+
 }
+
+export class InfiniteScrollExample {
+  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+
+  constructor() {}
+
+  loadData(event) {
+    setTimeout(() => {
+      console.log('Done');
+      event.target.complete();
+
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
+      if (length == 1000) {
+        event.target.disabled = true;
+      }
+    }, 500);
+  }
+
+  toggleInfiniteScroll() {
+    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
+  }
+}
+

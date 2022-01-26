@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avatar</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
+</head>
+
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -7,6 +24,19 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
+  <ion-list lines=none>
+    <ion-list-header>CarCare App</ion-list-header>
+    <ion-item>
+      <p>Helping you save time and money from expensive and inneficient revisions.</p>
+    </ion-item>
+
+    <ion-item lines = 'none'>
+      <ion-avatar><img src="../assets/img/car2.png"></ion-avatar>
+      <ion-label class='car_miniature'>CarCare App. All Right Reserved - 2021</ion-label>
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>
