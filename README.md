@@ -1,3 +1,2 @@
 ﻿# IonicApp
-App feito com o Ionic
-Mobile Asimov Jr
+App developed to get first started with ionic
